@@ -40,7 +40,7 @@ namespace AmazonTranslator.Controllers
         [HttpPost]
         public ActionResult TranslateComment(TranslateCommentViewModel comment)
         {
-            var translate = new AmazonTranslateClient("AKIAZXJXTSK2EDSZC7PL", "nmumsa2yN3ZOLqeXAdnIi6ALPCpq20u+NyytJk+J", RegionEndpoint.USEast1);
+            var translate = new AmazonTranslateClient("AWS-ACCESS-KEY", "AWS-SECRET-KEY", RegionEndpoint.USEast1);
             var request = new TranslateTextRequest() { Text = comment.CommentText, SourceLanguageCode = "en", TargetLanguageCode = comment.TargetLanguage };
             var model = new TranslatedCommentViewModel()
             {
