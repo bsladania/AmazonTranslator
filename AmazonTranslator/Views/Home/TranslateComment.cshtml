@@ -1,0 +1,21 @@
+﻿@model AmazonTranslator.Models.TranslatedCommentViewModel
+@{
+    ViewBag.Title = "Translated Comment";
+}
+<h2>Translated Comment</h2>
+<div class="row">
+    <div class="col-lg-2"><strong>Your Name</strong></div>
+    <div class="col-lg-10">@Model.SubmitterName</div>
+</div>
+<div class="row">
+    <div class="col-lg-2"><strong>Target Language</strong></div>
+    <div class="col-lg-10">@Model.TargetLangauge</div>
+</div>
+<div class="row">
+    <div class="col-lg-2"><strong>Original Text</strong></div>
+    <div class="col-lg-10">@Model.CommentText</div>
+</div>
+<div class="row">
+    <div class="col-lg-2"><strong>Translated Text</strong></div>
+    <div class="col-lg-10">@Model.TranslateResponse.TranslatedText</div>
+</div>

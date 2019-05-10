@@ -1,0 +1,22 @@
+﻿@model AmazonTranslator.Models.TranslateCommentViewModel
+@{
+    ViewBag.Title = "Add Comment";
+}
+<h2>Translate Comment</h2>
+@using (Html.BeginForm("TranslateComment", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <label>Your Name</label>
+        @Html.TextBoxFor(model => model.SubmitterName, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Your Comment</label>
+        @Html.TextAreaFor(model => model.CommentText, new { @class = "form-control", @cols = 40, @rows = 5 })
+    </div>
+    <div class="form-group">
+        <label>Target Languages</label>
+        @Html.DropDownListFor(m => m.TargetLanguage, Model.TargetLanguages, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-block btn-primary">Submit</button>
+}
